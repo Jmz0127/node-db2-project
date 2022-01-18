@@ -1,13 +1,13 @@
 exports.up = async function (knex) {
-  // DO YOUR MAGIC
+  // DO YOUR MAGIC - if youre not doing async remove async and replace await with return!!
   await knex.schema.createTable('cars', table => {
     table.increments();
-    table.text('vin').unique().notNullable();
-    table.text('make').notNullable();
-    table.text('model').notNullable();
-    table.integer('milage').notNullable();
-    table.text('title');
-    table.text('transmission');
+    table.string('vin', 17).unique().notNullable();
+    table.string('make', 128).notNullable();
+    table.string('model' 128).notNullable();
+    table.numeric('milage').unsigned().notNullable(); //unsigned means the number can't be in the negatives
+    table.string('title', 128); //for non required columns you can add a .defaultTo('string here')
+    table.string('transmission', 128);
   })
 };
 
