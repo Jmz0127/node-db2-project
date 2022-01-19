@@ -5,7 +5,7 @@ exports.up = async function (knex) {
 		table.string('vin', 17).unique().notNullable();
 		table.string('make', 128).notNullable();
 		table.string('model', 128).notNullable();
-		table.integer('milage').unsigned().notNullable(); //unsigned means the number can't be in the negatives
+		table.integer('mileage').unsigned().notNullable(); //unsigned means the number can't be in the negatives
 		table.string('title', 128); //for non required columns you can add a .defaultTo('string here')
 		table.string('transmission', 128);
 	});
