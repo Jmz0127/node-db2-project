@@ -7,7 +7,7 @@ server.use(express.json()); //parsing for json
 
 //error catch all
 server.use('*', (req, res, next) => {
-	next({ status: 404, message: 'not found' });
+	next({ status: 404, message: 'not found!' });
 });
 
 //error handling middleware for the above
