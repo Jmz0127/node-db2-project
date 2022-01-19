@@ -1,9 +1,11 @@
 const express = require('express');
-const res = require('express/lib/response');
+const carsRouter = require('./cars/cars-router');
 
 const server = express();
 
 server.use(express.json()); //parsing for json
+
+server.use('/api/cars', carsRouter);
 
 //error catch all
 server.use('*', (req, res, next) => {
